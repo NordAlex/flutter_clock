@@ -148,23 +148,30 @@ class _AnalogClockState extends State<AnalogClock> {
               size: 0.9,
               angleRadians: _now.minute * radiansPerTick,
             ),
-            // Example of a hand drawn with [Container].
-            ContainerHand(
-              color: Colors.transparent,
+            DrawnHand(
+              color: customTheme.highlightColor,
+              thickness: 16,
               size: 0.5,
               angleRadians: _now.hour * radiansPerHour +
                   (_now.minute / 60) * radiansPerHour,
-              child: Transform.translate(
-                offset: Offset(0.0, -60.0),
-                child: Container(
-                  width: 32,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    color: customTheme.primaryColor,
-                  ),
-                ),
-              ),
             ),
+            // Example of a hand drawn with [Container].
+            // ContainerHand(
+            //   color: Colors.transparent,
+            //   size: 0.5,
+            //   angleRadians: _now.hour * radiansPerHour +
+            //       (_now.minute / 60) * radiansPerHour,
+            //   child: Transform.translate(
+            //     offset: Offset(0.0, -60.0),
+            //     child: Container(
+            //       width: 32,
+            //       height: 150,
+            //       decoration: BoxDecoration(
+            //         color: customTheme.primaryColor,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Positioned(
               left: 0,
               bottom: 0,
